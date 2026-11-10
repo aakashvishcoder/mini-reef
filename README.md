@@ -14,4 +14,16 @@ A low-cost 4-layer Artix-7 board that runs a small Reef-style accelerator agains
 | `schematic-guide/` | Section-by-section schematic guides |
 | `planning-BOM.csv` | Planning BOM with LCSC numbers (not the JLC upload format) |
 | `mini-reef.pretty/` | Project footprints not in KiCad's stock library |
-| `fp-lib-table` | Registers the project footprint library |
+| `mini-reef.kicad_sym` | Project symbols: CH347T, W958D8NBYA HyperRAM |
+| `fp-lib-table`, `sym-lib-table` | Register the project libraries |
+
+## Schematic sections
+
+| # | Section | Main parts |
+|---|---|---|
+| 1 | USB-C & Power | USB-C, fuse, 3x TPS62130A (1.0 / 1.8 / 3.3 V, sequenced) |
+| 2 | FPGA Power | XC7A15T unit D, UG483 decoupling |
+| 3 | HyperRAM | W958D8NBYA5I on bank 35 (1.8 V), debug pins on bank 34 |
+| 4 | USB-JTAG & Console | CH347T (mode 3), JTAG header, bank 0 config straps |
+| 5 | Clock & Config | 50 MHz oscillator, W25Q32 flash, banks 14/15 |
+| 6 | Test Host & Debug | CH32V307 link header, debug header, LEDs, button |

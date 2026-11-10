@@ -15,3 +15,28 @@ Section,Ref,Qty/board,Value,Manufacturer Part,LCSC #,JLC Type,KiCad Symbol,KiCad
 1 USB-C & Power,R11,1,1k 1% 0402,0402WGF1001TCE,C11702,Basic,Device:R,Resistor_SMD:R_0402_1005Metric,Power LED
 1 USB-C & Power,D1,1,Red LED 0603,KT-0603R,C2286,Basic,Device:LED,LED_SMD:LED_0603_1608Metric,All rails good
 1 USB-C & Power,TP1-TP7,7,Test points,-,-,-,Connector:TestPoint,TestPoint:TestPoint_Pad_D1.5mm,Copper pads; exclude from BOM
+2 FPGA Power,U4,1,Artix-7 FPGA FTG256 (XC7A35T-1FTG256C is drop-in),XC7A15T-1FTG256C (AMD),C1521788,Extended,FPGA_Xilinx_Artix7:XC7A15T-FTG256,Package_BGA:Xilinx_FTG256,X-ray required; check stock (cached listing showed 6)
+2 FPGA Power,C13,1,100uF 6.3V X5R 1206,CL31A107MQHNNNE,C15008,Basic,Device:C,Capacitor_SMD:C_1206_3216Metric,VCCINT bulk
+2 FPGA Power,"C19,C21,C28,C29,C36,C43,C50",7,47uF 10V X5R 1206,CL31A476MPHNNNE,C96123,Basic,Device:C,Capacitor_SMD:C_1206_3216Metric,Bulk: VCCBRAM VCCAUX VCCO_0/14/15/34/35
+2 FPGA Power,"C14,C15,C22,C23,C30,C31,C37,C38,C44,C45,C51,C52",12,4.7uF 25V X5R 0805,CL21A475KAQNNNE,C1779,Basic,Device:C,Capacitor_SMD:C_0805_2012Metric,UG483 mid-frequency
+2 FPGA Power,"C16,C17,C18,C20,C24,C25,C26,C32,C33,C34,C35,C39,C40,C41,C42,C46,C47,C48,C49,C53,C54,C55,C56",23,1uF 25V X5R 0402,CL05A105KA5NQNC,C52923,Basic,Device:C,Capacitor_SMD:C_0402_1005Metric,UG483 0.47uF slots (>=0.47uF allowed)
+"2,3,4,5 small decoupling","C27,C58,C59,C60,C61,C64,C65",7,100nF 16V X7R 0402,CL05B104KO5NNNC,C1525,Basic,Device:C,Capacitor_SMD:C_0402_1005Metric,VCCADC; HyperRAM; CH347; flash; oscillator
+3 HyperRAM,U5,1,256Mb HyperRAM 1.8V x8 HyperBus,W958D8NBYA5I (Winbond),C7420405,Extended,mini-reef:W958D8NBYA,Package_BGA:BGA-24_6x8mm_Layout5x5_P1.0mm,Symbol in project library; X-ray required
+3 HyperRAM,C57,1,1uF 0402,CL05A105KA5NQNC,C52923,Basic,Device:C,Capacitor_SMD:C_0402_1005Metric,HyperRAM bulk (same line as section 2 1uF)
+4 USB-JTAG,U6,1,USB 2.0 HS to UART + JTAG (mode 3),CH347T (WCH),C5122332,Extended,mini-reef:CH347T,Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm,Symbol in project library
+4 USB-JTAG,Y1,1,8MHz crystal 5032,X50328MSB2GI (YXC),C115962,Basic,Device:Crystal,Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm,Same as RISC-V board Y2
+4 USB-JTAG,"C62,C63",2,20pF C0G 0402,0402CG200J500NT,C1554,Basic,Device:C,Capacitor_SMD:C_0402_1005Metric,Crystal load
+"4,5,6 pull resistors","R12,R13,R14,R15,R16,R17,R18,R21",8,4.7k 1% 0402,0402WGF4701TCE,C25900,Basic,Device:R,Resistor_SMD:R_0402_1005Metric,CH347 mode; PROGRAM_B; INIT_B; flash WP/HOLD/CS; button
+4 USB-JTAG,J2,1,JTAG header 1x6 2.54mm,-,-,Hand-solder,Connector_Generic:Conn_01x06,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,Exclude from BOM
+4 USB-JTAG,JP1,1,Jumper 1x2 2.54mm (CH347 reset),-,-,Hand-solder,Connector_Generic:Conn_01x02,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,Exclude from BOM
+5 Clock & Config,U7,1,32Mbit SPI flash,W25Q32JVSSIQ (Winbond),C179173,Extended,Memory_Flash:W25Q32JVSS,Package_SO:SOIC-8_5.3x5.3mm_P1.27mm,Holds ~17.5 Mbit bitstream
+5 Clock & Config,X1,1,50MHz oscillator 3.3V 3225,OT322550MJBA4SL (YXC),C717684,Extended,Oscillator:ASE-xxxMHz,Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm,Into MRCC pin N11
+6 Test Host & Debug,"J3,J4",2,2x6 2.54mm header,-,-,Hand-solder,Connector_Generic:Conn_02x06_Odd_Even,Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical,Exclude from BOM; snap from one 2x40 strip
+6 Test Host & Debug,"D2,D3",2,Red LED 0603,KT-0603R,C2286,Basic,Device:LED,LED_SMD:LED_0603_1608Metric,User LEDs (same line as D1)
+6 Test Host & Debug,"R19,R20",2,1k 1% 0402,0402WGF1001TCE,C11702,Basic,Device:R,Resistor_SMD:R_0402_1005Metric,LED resistors (same line as R11)
+6 Test Host & Debug,SW1,1,Tactile switch 5.1x5.1mm,TS-1187A-B-A-B (XKB),C318884,Basic,Switch:SW_Push,Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A,User/reset button
+,,,,,,,,,
+SUMMARY (cached prices; confirm at JLC quote),,,,,,,,,
+Extended part types,9,,"TPS62130A, inductor, USB-C, fuse, FPGA, HyperRAM, CH347T, flash, oscillator",,,,,,~$27 in JLC loading fees
+Parts per board,~$27.50,,,,,,,,FPGA ~$14.30 + HyperRAM ~$4.50 + CH347T ~$3.30 + power ~$3.70 + rest ~$1.70
+Estimated all-in for 2 assembled boards,~$220,,,,,,,,Incl. setup/stencil ~$37; 5 PCBs ~$10; ~35% tariff; DDP shipping. XC7A35T@$40 -> ~$290
