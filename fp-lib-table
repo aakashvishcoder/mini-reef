@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "mini-reef")(type "KiCad")(uri "${KIPRJMOD}/mini-reef.pretty")(options "")(descr "Mini-Reef project footprints"))
+)

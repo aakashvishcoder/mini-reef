@@ -1,0 +1,16 @@
+# KiCad temp/backup files
+*-backups/
+*.kicad_prl
+*.lck
+fp-info-cache
+*.bak
+\#auto_saved_files#
+_autosave-*
+~*.lck
+# Fab outputs (regenerate before ordering)
+production/
+gerbers/
+# Local tool settings
+.claude/settings.local.json
+.DS_Store
+.history/
