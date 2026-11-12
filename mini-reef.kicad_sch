@@ -12898,7 +12898,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TPS62130A"
+		(property "Value" "TPS62140A"
 			(at 78.3433 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12943,7 +12943,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C337502"
+		(property "LCSC" "C129366"
 			(at 80.01 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -16109,7 +16109,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TPS62130A"
+		(property "Value" "TPS62140A"
 			(at 78.3433 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16154,7 +16154,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C337502"
+		(property "LCSC" "C129366"
 			(at 80.01 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -16249,7 +16249,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TPS62130A"
+		(property "Value" "TPS62140A"
 			(at 129.1433 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16294,7 +16294,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C337502"
+		(property "LCSC" "C129366"
 			(at 130.81 67.31 0)
 			(hide yes)
 			(show_name no)

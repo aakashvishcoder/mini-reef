@@ -10,7 +10,7 @@ Checked 2026-11-09 against the TI TPS6213x datasheet (SLVSAG7F), AMD DS181 v1.27
 |---|---|---|---|---|
 | J1 | USB-C receptacle | `Connector:USB_C_Receptacle_USB2.0_16P` | `Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12` | C165948 |
 | F1 | 1.1A PTC fuse | `Device:Polyfuse` | `Fuse:Fuse_1206_3216Metric` | C20801 |
-| U1, U2, U3 | TPS62130A | `Regulator_Switching:TPS62130A` | `Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias` | C337502 |
+| U1, U2, U3 | TPS62140A | `Regulator_Switching:TPS62130A` (same pinout) | `Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias` | C129366 |
 | L1, L2, L3 | 2.2uH | `Device:L` | `mini-reef:IND-SMD_L4.5-W4.1_SRP4020TA` | C719179 |
 | C1, C4, C5, C8, C9, C12 | 22uF | `Device:C` | `Capacitor_SMD:C_0805_2012Metric` | C45783 |
 | C2, C6, C10 | 100nF | `Device:C` | `Capacitor_SMD:C_0402_1005Metric` | C1525 |
@@ -88,7 +88,7 @@ Each regulator (U1 shown; values for U2 and U3 in the table below):
 
 **F1:** pin 1 → `VBUS`, pin 2 → `+5V`. TP2 on `+5V`.
 
-**U1, U2, U3 (TPS62130A).** Every regulator is wired the same way. Only the rows in the table above differ.
+**U1, U2, U3 (TPS62140A).** Every regulator is wired the same way. Only the rows in the table above differ.
 - Pins 10, 11, 12 `VIN` → `+5V`. Input 22uF and 100nF from `+5V` to GND, right next to the chip.
 - Pins 1, 2, 3 `SW` → inductor pin 1. Inductor pin 2 → the output rail.
 - Pin 14 `VOS` → the output rail, on the inductor's output side.
@@ -108,7 +108,7 @@ Each regulator (U1 shown; values for U2 and U3 in the table below):
 
 ## Why it's built this way
 
-1. **It must be the TPS62130A, not the TPS62130.** The A version holds PG low while it's off (datasheet Table 8-2). On the plain TPS62130, PG floats and would turn the next rail on too early.
+1. **It must be an "A" version: TPS62140A, not TPS62140.** The A version holds PG low while it's off (TI device comparison table). On the plain part, PG floats and would turn the next rail on too early. The board was designed around the 3 A TPS62130A; JLC had none in stock on 2026-11-12, so it uses the 2 A TPS62140A, which has the same pinout, 0.8 V feedback and 2.5 µA soft-start current.
 2. **Turn-on order 1.0, then 1.8, then 3.3 V** is DS181's recommended order (VCCINT, VCCBRAM, VCCAUX, VCCO). Each regulator's PG enables the next.
 3. **10nF soft-start gives a 5 ms ramp** (C × 1.25 V / 2.5 µA). DS181 allows 0.2–50 ms. The datasheet's 3.3nF is an Extended part, so 10nF saves $3.
 4. **Output voltages** from Vout = 0.8 V × (1 + top/bottom):
@@ -132,7 +132,7 @@ Each regulator (U1 shown; values for U2 and U3 in the table below):
 | +3V3 | 41 mA per bank | ~200 mA | ~0.15 A |
 | **Total** | | **~1.7 W** | **~0.4 A** |
 
-The running figures are my estimate. PRD R5 needs AMD's Power Estimator once your RTL exists. Each regulator handles 3 A.
+The running figures are my estimate. PRD R5 needs AMD's Power Estimator once your RTL exists. Each regulator handles 2 A.
 
 ## Bring-up test (after boards arrive)
 
@@ -152,7 +152,7 @@ The running figures are my estimate. PRD R5 needs AMD's Power Estimator once you
 
 ## Done-check
 
-- [ ] U1–U3 are **TPS62130A** (C337502)
+- [ ] U1–U3 are **TPS62140A** (C129366)
 - [ ] U1 EN → +5V, U2 EN → `PG_1V0`, U3 EN → `PG_1V8`. U3 PG → no-connect flag
 - [ ] U2 and U3 VIN → `+5V` (not the PG label: EN and VIN are separate wires on U2 and U3)
 - [ ] Divider values match the table, top resistor to the output rail, bottom to GND

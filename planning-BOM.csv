@@ -2,7 +2,7 @@ Section,Ref,Qty/board,Value,Manufacturer Part,LCSC #,JLC Type,KiCad Symbol,KiCad
 1 USB-C & Power,J1,1,USB-C receptacle USB2.0 16-pin,TYPE-C-31-M-12 (HRO),C165948,Extended,Connector:USB_C_Receptacle_USB2.0_16P,Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12,Quoted on the RISC-V board order
 1 USB-C & Power,F1,1,PTC fuse 1.1A hold 6V 1206,SMD1206P110TF (RUILON),C20801,Extended,Device:Polyfuse,Fuse:Fuse_1206_3216Metric,
 1 USB-C & Power,"R1,R2,R3",3,5.1k 1% 0402,0402WGF5101TCE,C25905,Basic,Device:R,Resistor_SMD:R_0402_1005Metric,CC pull-downs; R3 = 1V0 FB top
-1 USB-C & Power,"U1,U2,U3",3,3A buck regulator,TPS62130ARGTR (TI),C337502,Extended,Regulator_Switching:TPS62130A,Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias,Must be the A version: PG low while disabled
+1 USB-C & Power,"U1,U2,U3",3,2A buck regulator,TPS62140ARGTR (TI),C129366,Extended,Regulator_Switching:TPS62130A,Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias,Must be the A version: PG low while disabled. Pin-compatible with TPS62130A (out of stock at JLC 2026-11-12)
 1 USB-C & Power,"L1,L2,L3",3,2.2uH power inductor,SRP4020TA-2R2M (Bourns),C719179,Extended,Device:L,mini-reef:IND-SMD_L4.5-W4.1_SRP4020TA,Footprint in project library
 1 USB-C & Power,"C1,C4,C5,C8,C9,C12",6,22uF 25V X5R 0805,CL21A226MAQNNNE,C45783,Basic,Device:C,Capacitor_SMD:C_0805_2012Metric,Regulator input and output
 1 USB-C & Power,"C2,C6,C10",3,100nF 16V X7R 0402,CL05B104KO5NNNC,C1525,Basic,Device:C,Capacitor_SMD:C_0402_1005Metric,AVIN decoupling
@@ -37,6 +37,6 @@ Section,Ref,Qty/board,Value,Manufacturer Part,LCSC #,JLC Type,KiCad Symbol,KiCad
 6 Test Host & Debug,SW1,1,Tactile switch 5.1x5.1mm,TS-1187A-B-A-B (XKB),C318884,Basic,Switch:SW_Push,Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A,User/reset button
 ,,,,,,,,,
 SUMMARY (cached prices; confirm at JLC quote),,,,,,,,,
-Extended part types,9,,"TPS62130A, inductor, USB-C, fuse, FPGA, HyperRAM, CH347T, flash, oscillator",,,,,,~$27 in JLC loading fees
+Extended part types,9,,"TPS62140A, inductor, USB-C, fuse, FPGA, HyperRAM, CH347T, flash, oscillator",,,,,,~$27 in JLC loading fees
 Parts per board,~$27.50,,,,,,,,FPGA ~$14.30 + HyperRAM ~$4.50 + CH347T ~$3.30 + power ~$3.70 + rest ~$1.70
 Estimated all-in for 2 assembled boards,~$220,,,,,,,,Incl. setup/stencil ~$37; 5 PCBs ~$10; ~35% tariff; DDP shipping. XC7A35T@$40 -> ~$290

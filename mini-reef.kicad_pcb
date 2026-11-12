@@ -4297,7 +4297,7 @@
 				)
 			)
 		)
-		(property "Value" "TPS62130A"
+		(property "Value" "TPS62140A"
 			(at 0 2.83 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4343,7 +4343,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C337502"
+		(property "LCSC" "C129366"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -5080,7 +5080,7 @@
 				)
 			)
 		)
-		(property "Value" "TPS62130A"
+		(property "Value" "TPS62140A"
 			(at 0 2.83 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5126,7 +5126,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C337502"
+		(property "LCSC" "C129366"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -20616,7 +20616,7 @@
 				)
 			)
 		)
-		(property "Value" "TPS62130A"
+		(property "Value" "TPS62140A"
 			(at 0 2.83 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -20662,7 +20662,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C337502"
+		(property "LCSC" "C129366"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
