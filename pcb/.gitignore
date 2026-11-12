@@ -1,0 +1,4 @@
+work*/
+log_*.txt
+*.jar
+__pycache__/
